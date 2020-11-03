@@ -9,8 +9,6 @@ filelist = []
 #get the path of every file in every directory and subdirectory
 for root, dirs, files in os.walk("."):
     for file in files: 
-        filelist.append(os.path.join(root, file))
-        
-#rename the filenames
-for filename in filelist: 
-    os.rename(filename, os.path.join(os.path.dirname(filename), re.sub('^[+[0-9]+]_', '', os.path.basename(filename))))
+        filename = os.path.join(root,file)
+        # filelist.append(os.path.join(root, file))
+        os.rename(filename, os.path.join(root, re.sub('^[+[0-9]+]_', '', file)))
