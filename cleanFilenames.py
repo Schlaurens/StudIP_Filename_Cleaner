@@ -10,6 +10,8 @@ for root, dirs, files in os.walk("."):
             continue
 
         filename = os.path.join(root,file)
-        
+
         #rename the files
         os.rename(filename, os.path.join(root, re.sub('^[+[0-9]+]_', '', file)))
+
+print("Your files have been successfully cleansed!")
