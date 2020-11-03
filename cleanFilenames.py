@@ -13,5 +13,4 @@ for root, dirs, files in os.walk("."):
         
 #rename the filenames
 for filename in filelist: 
-    #os.rename(filename, re.sub('^[+[0-9]+]_', '', os.path.basename(filename)))
     os.rename(filename, os.path.join(os.path.dirname(filename), re.sub('^[+[0-9]+]_', '', os.path.basename(filename))))
