@@ -10,5 +10,5 @@ filelist = []
 for root, dirs, files in os.walk("."):
     for file in files: 
         filename = os.path.join(root,file)
-        # filelist.append(os.path.join(root, file))
+        #rename the files
         os.rename(filename, os.path.join(root, re.sub('^[+[0-9]+]_', '', file)))
